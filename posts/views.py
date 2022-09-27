@@ -15,12 +15,12 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = "posts/new.html"
     model = Post
-    fields = ["title", "body", "category", "image"]
+    fields = ["title", "body", "category", "author"]
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name =  "posts/edit.html"
     model = Post
-    fields = ["title", "body", "category", "image"]
+    fields = ["title", "body", "category", "author"]
 
     def test_func(self):
         post_obj = self.get_object()
