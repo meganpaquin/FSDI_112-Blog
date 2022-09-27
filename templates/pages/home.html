@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block title %}
@@ -7,5 +8,53 @@
 
 
 {% block contents %}
-    <h1>This is a home page</h1>
+    <h1>The Mom Blog</h1>
+
+    <div class="header-image">
+        <img src="{% static 'img/baby-feet.jpg' %}" alt="" id="babyfeet">
+    </div>
+
+    <div class="home-layout">
+    <div class="left">
+        <div class="card homepage-card">
+            <img src="{% static 'img/products.jpeg' %}" class="card-img-top">
+            <div class="card-body">
+                <p>Search articles with sponsored links to must have items for your child. Tried and tested by real moms and real experiences. </p>
+                <a href="{% url 'list' %}" class="card-btns">See Products</a>
+            </div>
+        </div>
+
+        <div class="card homepage-card">
+            <img src="{% static 'img/help.jpg' %}" class="card-img-top">
+            <div class="card-body">
+                <p>View articles that contain resources for new and experienced moms. Take the challenge out of learning by learning together. </p>
+                <a href="{% url 'list' %}" class="card-btns">See Products</a>
+            </div>
+        </div>
+
+        <div class="card text-bg-dark homepage-card-lg">
+            <img src="{% static 'img/twins.webp' %}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Join Our Family on the Adventure With Twins</h5>
+              <p class="card-text">Everything you need to know about managing twins, family life, relationships and more. Twins are a challenge we can face together</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <div class="section">
+            {% for post in posts %}
+            <div class="highlight">
+                <a href="{% url 'detail' post.id %}">
+                    <p class="highlight-title">{{ post.title }}</p>
+                    <p class="highlight-cat">{{ post.category }}</p>
+                    <p class="highlight-date">Date: {{ post.created_on }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    </div>
 {% endblock contents %}

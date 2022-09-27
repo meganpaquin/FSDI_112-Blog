@@ -15,6 +15,7 @@ h1{
     width: 300px;
     margin: 10px auto;
     text-align: left;
+    border: 2px solid #2C1A1D;
 }
 
 .list-container{
@@ -90,3 +91,126 @@ body{
     margin: 10px auto;
 }
 
+
+.home-layout{
+    display: flex;
+    width: 87%;
+    margin: 0 auto;
+}
+
+.left{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.right{
+    flex: 1;
+    scroll-behavior: auto;
+}
+
+#babyfeet{
+    display: block;
+    object-fit: cover;
+    width: 87%;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.card-img-top{
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.homepage-card{
+    height: 400px;
+}
+
+.homepage-card-lg{
+    width: 97%;
+}
+
+.card-img{
+    object-fit: cover;
+    height: 300px;
+}
+
+.card-img-overlay{
+    color: black;
+    margin-top: 180px;
+}
+
+.highlight{
+    background-color: white;
+    border: 2px solid #2C1A1D;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    height: 130px;
+}
+
+.highlight a{
+    text-decoration: none;
+    color: black;
+}
+
+.highlight-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #A67F8E;
+    margin-bottom: 0;
+}
+
+.highlight-date{
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+.highlight-cat{
+    margin: 0;
+    padding: 0;
+}
+
+.details{
+    width: 70%;
+    margin: 30px auto;
+    border: 2px solid #2C1A1D;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.details h4{
+    font-size: 30px;
+    color: #2C1A1D;
+    margin-bottom: 20px;
+}
+
+.details p{
+    margin-top: 10px;
+}
+
+
+.new-form{
+    margin: 0 auto;
+    width: 70%;
+    padding: 20px;
+}
+
+.new-form label{
+    width: 120px;
+    font-weight: bold;
+}
+
+.new-form input, .new-form textarea{
+    width: 400px;
+    margin: 0 auto;
+}
