@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Posts
+{% endblock title %}
+
+{% block contents %}
+
+    <h1>Posts</h1>
+        {% for post in post_list %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <h6 class="card-subtitle">{{ post.category }}</h6>
+                    <p class="card-text">{{ post.body | truncatechars:500 }}</p>
+                    <p class="card-text">{{ post.date}}</p>
+                </div>
+            </div>
+
+
+            <li>
+                <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+{% endblock contents %}
