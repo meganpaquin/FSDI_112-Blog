@@ -8,6 +8,13 @@
 {% block contents %}
 
     <h1>Posts</h1>
+    <div class="filter-buttons">
+        <button class="card-btns"><a href="{% url 'list' %}">All Posts</a></button>
+        <button class="card-btns"><a href="{% url 'sale_list' %}">Product Posts</a></button>
+        <button class="card-btns"><a href="{% url 'resource_list' %}">Resources</a></button>
+        <button class="card-btns"><a href="{% url 'experience_list' %}">Experiences</a></button>
+
+    </div>
     <div class="list-container">
         {% for post in post_list %}
             <div class="card">
@@ -22,8 +29,11 @@
                     </div>
 
                     <a href="{% url 'detail' post.id %}" class="card-btns">Read More</a>
+
+                    {% if user == post.author %}
                     <a href="{% url 'delete' post.id %}" class="card-btns">Delete</a>
                     <a href="{% url 'edit' post.id %}" class="card-btns">Edit</a>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
