@@ -28,22 +28,33 @@
             <img src="{% static 'img/help.jpg' %}" class="card-img-top">
             <div class="card-body">
                 <p>View articles that contain resources for new and experienced moms. Take the challenge out of learning by learning together. </p>
-                <a href="{% url 'list' %}" class="card-btns">See Products</a>
+                <a href="{% url 'resource_list' %}" class="card-btns">See Resources</a>
             </div>
         </div>
-
+        
         <div class="card text-bg-dark homepage-card-lg">
             <img src="{% static 'img/twins.webp' %}" class="card-img" alt="...">
             <div class="card-img-overlay">
-              <h5 class="card-title">Join Our Family on the Adventure With Twins</h5>
-              <p class="card-text">Everything you need to know about managing twins, family life, relationships and more. Twins are a challenge we can face together</p>
+                <a href="{% url 'twins_list' %}">
+                <h5 class="card-title">Join Our Family on the Adventure With Twins</h5>
+                <p class="card-text">Everything you need to know about managing twins, family life, relationships and more. Twins are a challenge we can face together</p>
+                </a>
             </div>
         </div>
 
+        <div class="filter-btns">
+            <a href="{% url 'list' %}" class="card-btns">All Posts</a>
+            <a href="{% url 'sale_list' %}" class="card-btns">Products</a>
+            <a href="{% url 'resource_list' %}" class="card-btns">Resources</a>
+            <a href="{% url 'experience_list' %}" class="card-btns">Experiences</a>
+
+        </div>
+       
     </div>
 
     <div class="right">
         <div class="section">
+            <h3 class="featured-header">Featured Product Reviews</h3>
             {% for post in posts %}
             <div class="highlight">
                 <a href="{% url 'detail' post.id %}">

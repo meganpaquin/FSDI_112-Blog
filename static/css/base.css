@@ -96,6 +96,7 @@ body{
     display: flex;
     width: 87%;
     margin: 0 auto;
+    scroll-behavior: auto;
 }
 
 .left{
@@ -103,8 +104,12 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
 }
+
+
 
 .right{
     flex: 1;
@@ -129,10 +134,20 @@ body{
 
 .homepage-card{
     height: 400px;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+    padding: 0;
 }
 
 .homepage-card-lg{
-    width: 97%;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.homepage-card-lg a{
+    text-decoration: none;
+    color: black;
 }
 
 .card-img{
@@ -215,3 +230,23 @@ body{
     margin: 0 auto;
 }
 
+.featured-header{
+    text-align: center;
+    background-color: #2C1A1D;
+    color:  #DBB3B1;
+    font-size: 22px;
+    margin: 10px auto;
+    padding: 20px;
+    width: 97%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.filter-btns{
+    margin: 20px auto;
+}
+
+.filter-btns a, .d-flex a{
+    text-decoration: none;
+    color: #A67F8E;
+}

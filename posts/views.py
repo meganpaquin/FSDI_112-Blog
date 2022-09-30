@@ -64,6 +64,15 @@ class ExperienceListView(ListView):
         context['post_list'] = Post.objects.filter(category="Experiences").order_by('created_on').reverse()
         return context
 
+class TwinListView(ListView):
+    template_name = "posts/list.html"
+    model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post_list'] = Post.objects.filter(category="Twins").order_by('created_on').reverse()
+        return context
+
 class PostDetailView(DetailView):
     template_name = "posts/detail.html"
     model = Post

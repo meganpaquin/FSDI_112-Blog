@@ -8,7 +8,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['posts'] = Post.objects.filter(category="Products").order_by('created_on')[0:5]
+        context['posts'] = Post.objects.filter(category="Products").order_by('created_on').reverse()[0:5]
         
         return context
 
